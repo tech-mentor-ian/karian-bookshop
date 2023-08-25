@@ -1,0 +1,24 @@
+{
+  "name": "karian-bookshop",
+  "version": "1.0.0",
+  "description": "\"A CRUD app to refresh on Node.js with TypeScript and sequelize ORM following the clean architecture\"",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/techwithian/karian-bookshop.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Sequelize",
+    "Clean-Architecture"
+  ],
+  "author": "Ian Macharia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techwithian/karian-bookshop/issues"
+  },
+  "homepage": "https://github.com/techwithian/karian-bookshop#readme"
+}
