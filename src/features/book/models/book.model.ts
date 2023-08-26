@@ -1,7 +1,14 @@
 import { Table, Column, Model, DataType } from "sequelize-typescript";
 
 @Table({ tableName: "books" })
-class Book extends Model<Book> {
+export class Book extends Model<Book> {
+  @Column({
+    type: DataType.UUID,
+    defaultValue: DataType.UUIDV4,
+    primaryKey: true,
+  })
+  id: string;
+
   @Column({
     type: DataType.STRING,
     allowNull: false,
@@ -14,5 +21,3 @@ class Book extends Model<Book> {
   })
   author: string;
 }
-
-export default Book;
