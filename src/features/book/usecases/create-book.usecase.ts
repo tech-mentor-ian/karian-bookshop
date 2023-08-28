@@ -1,11 +1,17 @@
-import BookRepository from "@features/book/repositories/book.repository";
+import BookRepository from "../repositories/book.repository";
 import { Book } from "../models/book.model";
 
 class CreateBookUseCase {
   constructor(private bookRepository: BookRepository) {}
 
   async execute(bookData: Book): Promise<Book> {
-    const book = new Book(bookData.id, bookData.title, bookData.author);
+     // Create a new instance of the Book model using the alias
+    //  const newBook = new Book({
+    //   title: bookData.title,
+    //   author: bookData.author,
+    // });
+
+    const book = new Book(bookData);
     return this.bookRepository.create(book);
   }
 }

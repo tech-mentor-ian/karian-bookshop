@@ -1,23 +1,36 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  CreatedAt,
+  UpdatedAt,
+} from "sequelize-typescript";
 
-@Table({ tableName: "books" })
+@Table({ tableName: "books", modelName: "Book", timestamps: true })
 export class Book extends Model<Book> {
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
     primaryKey: true,
   })
-  id: string;
+  declare id: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  title: string;
+  declare title: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
-  author: string;
+  declare author: string;
+
+  @CreatedAt
+  declare createdAt: Date;
+
+  @UpdatedAt
+  declare updatedAt: Date;
 }

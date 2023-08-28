@@ -5,7 +5,8 @@ class GetBookUseCase {
   constructor(private bookRepository: BookRepository) {}
 
   async execute(bookId: string): Promise<Book | null> {
-    // Implement get book logic
+    const book = await this.bookRepository.findById(bookId);
+    return book;
   }
 }
 
