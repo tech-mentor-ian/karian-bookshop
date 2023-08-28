@@ -15,7 +15,9 @@ class BookController {
   }
 
   async getBook(req: Request, res: Response) {
-    // Handle get book logic
+    const bookId = req.params.id;
+    const book = await this.getBookUseCase.execute(bookId);
+    res.json(book);
   }
 }
 
